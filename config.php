@@ -1,9 +1,9 @@
 <?php 
 
 //DB credentials
-$db_name = 'deletethis';
-$db_user = 'delete';
-$db_password = 'delete';
+$db_name = 'melissa_blog';
+$db_user = 'mmc_bloguser1114';
+$db_password = 'PQ7UVDzvExyM78nz';
 
 //connect to DB
 $db = new mysqli( 'localhost', $db_user, $db_password, $db_name );

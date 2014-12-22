@@ -1,45 +1,11 @@
-<?php require('config.php'); ?>
+<?php require('../config.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Simple PHP + MySQL + JQuery Ajax tabs demo</title>
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
-  <style type="text/css">
-      body{
-        font-family: sans-serif;
-    }
-   
-    .tabs{
-        margin: 0;
-        padding: 0;
-    }
-    .tab{
-        margin: 0 .1em;
-        padding: 0;
-        padding:.5em;
-        border-bottom:none;
-        display: inline-block;
-        cursor: pointer;
-         background: #eee;
-    }
-    
-    .tab-panel{
-        background-color: #eee;
-        padding:1em;
-    }
-    .active    {
-        background-color: #D0F1C0;
-    }
-    .loading{
-        opacity: .3;
-        background: 
-                    url('http://i.stack.imgur.com/FhHRx.gif')
-                    50% 50% 
-                    no-repeat;
-    }
-    
-</style>
+ <link rel="stylesheet" type="text/css" href="../ajax-demos-style.css">
 </head>
 
 <body>
@@ -76,7 +42,7 @@
             $.ajax({   
                 type: "GET",
                 url: "display.php",  
-                data: { 'catid': catid },   //send the category id in the request    
+                data: { 'cat_id': catid },   //send the category id in the request    
                 dataType: "html",   //expect html to be returned
                 success: function(response){
                     $("#display-area")  .html(response)

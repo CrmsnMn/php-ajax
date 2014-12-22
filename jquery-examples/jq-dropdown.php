@@ -1,15 +1,12 @@
-<?php require('config.php'); ?>
+<?php require('../config.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Simple PHP + MySQL + JQuery Ajax demo</title>
+ <link rel="stylesheet" type="text/css" href="../ajax-demos-style.css">
+
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-  <style type="text/css">
-  body{
-    font-family: sans-serif;
-  }
-  </style>
 </head>
 
 <body>
@@ -40,7 +37,7 @@
             $.ajax({   
                 type: "GET",
                 url: "display.php",  
-                data: { 'catid': catid },   //send the category id in the request    
+                data: { 'cat_id': catid },   //send the category id in the request    
                 dataType: "html",   //expect html to be returned
               success: function(response){
                 $("#display-area")  .html(response)

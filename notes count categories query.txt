@@ -1,5 +1,0 @@
-SELECT COUNT(*) AS total, c.title
-FROM posts as p, categories as c, post_cats as pc
-WHERE p.post_id = pc.post_id
-AND c.category_id = pc.category_id
-GROUP BY category_id
