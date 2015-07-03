@@ -12,7 +12,7 @@
     <h3>Pick a category</h3>
 
     <?php 
-    $query = "SELECT * FROM categories";
+    $query = "SELECT * FROM users";
     $result = $db->query($query);
     ?>
 
@@ -20,7 +20,7 @@
     <ul class="tabs">
         <?php while( $row = $result->fetch_assoc() ){ ?>
 
-        <li class="tab" data-catid="<?php echo $row['category_id'] ?>"><?php echo $row['title'] ?></li>
+        <li class="tab" data-user="<?php echo $row['user_id'] ?>"><?php echo $row['username'] ?></li>
 
         <?php } ?>
     </ul>
@@ -31,7 +31,7 @@
         $(".tab").click(function() { 
 
             //get the value of the category they clicked
-            var catid = $(this).data("catid"); 
+            var user_id = $(this).data("user"); 
 
             //reset active tab class
             $('ul > li').removeClass('active'); 
@@ -42,7 +42,7 @@
             $.ajax({   
                 type: "GET",
                 url: "display.php",  
-                data: { 'cat_id': catid },   //send the category id in the request    
+                data: { 'user_id': user_id },   //send the user id in the request    
                 dataType: "html",   //expect html to be returned
                 success: function(response){
                     $("#display-area")  .html(response)

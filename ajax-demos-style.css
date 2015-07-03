@@ -2,6 +2,7 @@
         font-family: sans-serif;
         max-width: 600px;
         margin: 0 auto;
+        background-color: #929292
     }
     #display-area{
         margin-top: 1em;
@@ -42,4 +43,4 @@
                     50% 50% 
                     no-repeat;
     }
-    
+

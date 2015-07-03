@@ -8,15 +8,13 @@
 require('../config.php');
 
 //data coming from jquery .ajax() call
-$id = $_REQUEST['cat_id'];
+$id = $_REQUEST['user_id'];
 
 //get the posts in that category
-$query = "SELECT posts.title , posts.body, categories.title AS category
-		 FROM posts, categories, post_cats 
+$query = "SELECT *
+		 FROM posts
 		 WHERE posts.is_published = 1
-		 AND posts.post_id = post_cats.post_id
-		 AND categories.category_id = post_cats.category_id
-		 AND categories.category_id = $id";
+		 AND user_id = $id";
 //run it
 $result = $db->query($query);
 
@@ -33,5 +31,5 @@ if($result->num_rows >= 1){
 	}
 	echo '</section>';
 }else{
-	echo 'Sorry, no posts in that category';
+	echo 'Sorry, this author has not written any posts';
 }
