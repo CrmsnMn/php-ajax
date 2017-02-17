@@ -1,9 +1,9 @@
 <?php
 /**
  * DISPLAY OUTPUT
- * This file gets loaded by the ajax request
+ * This file gets accessed by the ajax request
  * It is identical whether using jquery or pure ajax
- * note that it has no doctype and is not intended as a standalone file. 
+ * note that it has no doctype and is not intended as a standalone file. It will never be sent directly to the browser.
  */
 require('../config.php');
 
